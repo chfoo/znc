@@ -88,7 +88,7 @@ CIRCSock::CIRCSock(CIRCNetwork* pNetwork) : CIRCSocket() {
 	pNetwork->SetIRCSocket(this);
 
 	// RFC says a line can have 512 chars max, but we don't care ;)
-	SetMaxBufferThreshold(1024);
+	SetMaxBufferThreshold(4096);
 	if (m_bFloodProtection) {
 		AddCron(new CIRCFloodTimer(this));
 	}
